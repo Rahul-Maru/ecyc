@@ -1,0 +1,30 @@
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #b9f87a;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-bottom: 400px;
+
+}
+
+.footer {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #b9f87a;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    margin-bottom: 40px;
+}
+
+body { 
+    margin-top: 130px;
+}
