@@ -4,20 +4,31 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #b9f87a;
+    background-color: #68b31d6c;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 5px;
     padding-bottom: 5px;
-    margin-bottom: 400px;
+    justify-content: space-between;
+    display: flex;
+    align-items: center;
 
+}
+.logo {
+    color: white;
+    font-weight: bolder;
+}
+nav a {
+    margin-right: 20px;
+    color: white;
+    text-decoration: none;
 }
 
 .footer {
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #b9f87a;
+    background-color: #68b31d;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 5px;
@@ -26,5 +37,49 @@
 }
 
 body { 
-    margin-top: 130px;
+    padding: 0;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+#hero {
+    margin-top: 0px;
+}
+
+.banner {
+    color: white;
+    text-align: right;
+    font-family: "Arial", sans-serif; /* Replace with your desired cool font */
+
+    padding: 40px;
+    padding-top: 110px;
+    padding-bottom: 200px;
+}
+
+h1 {
+    font-size: 36pt;
+}
+
+#mainbanner {
+    background-image: url("electronics.png") !important;
+    background-position: center;
+    background-size: 100%;
+}
+
+#aboutbanner {
+    background-image: url("commandline.jpg") !important;
+    background-position: center;
+    background-size: 100%;
+}
+
+#contactbanner {
+    background-image: url("rotary.jpeg") !important;
+    background-position: center;
+    background-size: 100%;
+}
+
+#mapbanner {
+    background-image: url("circuitmap.jpg") !important;
+    background-position: center;
+    background-size: 100%;
 }
