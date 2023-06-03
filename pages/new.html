@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/styles.css">
+    <title>Document</title>
+</head>
+<body>
+    <p>A</p>
+    <div id="monke">
+    </div>
+    <button onclick="monktion()">E</button>
+    <script>
+        let list = ['1', '2', '3'];
+        let dhiv = document.querySelector("#monke");
+        function monktion() {
+            let ule = document.createElement('ul');
+            alert("A");
+            list.forEach(element => {
+                let listitem = document.createElement("li");
+                listitem.innerHTML = element;
+                listitem.className = "header"
+                ule.appendChild(listitem);
+            });
+            dhiv.appendChild(ule);
+        }
+    </script>
+    <img src="../styles/images/mouse.jpeg   "/>
+</body>
+</html>
