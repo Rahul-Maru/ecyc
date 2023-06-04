@@ -10,29 +10,32 @@
     <link rel="icon" type="image/x-icon" href="../styles/images/logoecyc.png">
     <script src="../js/jquery.js"></script> 
     <script> 
-    $(document).ready(function() {
-      $('#head').load('template.html .header');
-      $('#foot').load('template.html .footer');
+      $(document).ready(function() {
+        $('#head').load('template.html .header');
+        $('#foot').load('template.html .footer');
 
-    });
+      });
     </script> 
   </head>
   <body>
     <div id="head"></div>
 
     <div id="mapbanner" class="banner">
-        <h1>The Cyc-Map</h1>
-      </div>
-
-    <form id="location-form">
-        <label for="location-input">Location:</label>
-        <input type="text" id="location-input">
-        <button type="submit">Add Location</button>
-    </form>
-    <div id="map"></div>
-    <div style="width: 100%">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d124415.12063321698!2d77.49073772394969!3d12.973609433955623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1se%20waste%20recyclers!5e0!3m2!1sen!2sin!4v1685696416375!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <h1>The Cyc-Map</h1>
     </div>
+
+    <div class="container">
+      <form id="location-form">
+          <label for="location-input">Location:</label>
+          <input type="text" id="location-input">
+          <button type="submit">Add Location</button>
+      </form>
+      <div id="map"></div>
+      <div style="width: 100%">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d124415.12063321698!2d77.49073772394969!3d12.973609433955623!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1se%20waste%20recyclers!5e0!3m2!1sen!2sin!4v1685696416375!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+
     <div id="foot"></div>
     </body>
 </html> 

@@ -9,8 +9,8 @@
         <script src="../js/jquery.js"></script> 
         <script> 
         $(document).ready(function() {
-        $('#head').load('template.html .header');
-        $('#foot').load('template.html .footer');
+            $('#head').load('template.html .header');
+            $('#foot').load('template.html .footer');
 
         });
     </script>
@@ -22,121 +22,122 @@
             <h2>Gadgets & Components</h2>
         </div>
 
-        <main>
-            <aside>
-                <h2>Filters</h2>
-                <!-- Filter options go here -->
-                
-                <section>
-                    <h3>Category</h3>
-                    <select id="category-selection" name="category_select">
-                        <option value="all">All</option>
-                        <option value="gadget">Devices/Gadgets</option>
-                        <option value="component">Components</option>
-                    </select>
-                </section>
-                <button type="button" onclick="updateList()">Applyy</button>
-            </aside>
+        <div class="container">
+            <div>
+                <div style="margin-left: 50px;">
+                    <h2>Filters</h2>
+                    <!-- Filter options go here -->
+                    
+                    <section>
+                        <h3>Category</h3>
+                        <select id="category-selection" name="category_select">
+                            <option value="all">All</option>
+                            <option value="gadget">Devices/Gadgets</option>
+                            <option value="component">Components</option>
+                        </select>
+                    </section>
+                    <button type="button" style="margin-top: 10px;" onclick="updateList()">Apply</button>
+                </div>
 
-            <div id="product-list">
+                <div id="product-list" style="margin-top: 30px; display: grid; grid-template-columns: repeat(3,1fr); box-sizing: content-box;">
+                
+
+                    <script>
+                        let productList =  [{"name": "Mouse", "price": 42.69, "type": "gadget", "qty": 31, "imgpath": "../styles/images/mouse.jpeg"}, 
+                                            {"name": "Laptop", "price": 15000.00, "type": "gadget", "qty": 400, "imgpath": "../styles/images/laptop.png"}, 
+                                            {"name": "Monitor", "price": 600.0, "type": "gadget", "qty": 8, "imgpath": "../styles/images/monitor.jpeg"}, 
+                                            {"name": "IC", "price": 10.42, "type": "component", "qty": 420, "imgpath": "../styles/images/ic.jpg"}, 
+                                            {"name": "Resistor", "price": 4.00, "type": "component", "qty": 1200, "imgpath": "../styles/images/res.png"}, 
+                                            {"name": "Capacitor", "price": 6.9, "type": "component", "qty": 6900, "imgpath": "../styles/images/cap.png"}, ];
+
+                        listSection = document.querySelector("#product-list");
+                        updateList()
+
+                        function updateList()
+                        {
+                            listSection.innerHTML = ""; 
+
+                            let dropdown = document.querySelector("#category-selection");
+                            let category = dropdown.value;
+
+                            for (let i = 0; i<productList.length; i++)
+                            {
+                                item = productList[i];
+                                if (item.type == category || category == "all") 
+                                {
+                                    let product_div = document.createElement("div");
+                                    product_div.classList.add("product_div")
+
+                                    let img_p = document.createElement("img");
+                                    img_p.setAttribute("src", item.imgpath);
+                                    
+                                    img_p.classList.add("product_img")
+                                    product_div.appendChild(img_p);
+
+                                    let name_p = document.createElement("h4");
+                                    name_p.innerHTML = item.name;
+                                    name_p.classList.add("product_name")
+                                    product_div.appendChild(name_p);
+
+                                    let price_p = document.createElement("p");
+                                    price_p.innerHTML = "Price: ₹"+item.price;
+                                    price_p.classList.add("product_price")
+                                    product_div.appendChild(price_p);
+
+                                    let qp = document.createElement("p");
+                                    qp.innerHTML = "Quantity available: " + item.qty;
+                                    product_div.appendChild(qp);
+                                    price_p.classList.add("product_qty");
+
+                                    let qty_slider = document.createElement("div")
+                                    qty_slider.setAttribute("display", "flex")
+                                    let minus = document.createElement("button")
+                                    minus.innerHTML = "-"
+                                    let plus = document.createElement("button")
+                                    plus.innerHTML = "+"
+                                    let qty_display = document.createElement("p");
+                                    qty_display.innerHTML = "0"
+
+                                    qty_slider.appendChild(minus)
+                                    qty_slider.appendChild(qty_display)
+                                    qty_slider.appendChild(plus)
+
+                                    
+                                    product_div.appendChild(qty_slider)
+                                    listSection.appendChild(product_div);
+
+
+                                }
+                            }
+                        } 
+
+                    </script>
+                </div>
             </div>
 
-            <script>
-                let productList =  [{"name": "Mouse", "price": 42.69, "type": "gadget", "qty": 31, "imgpath": "../styles/images/mouse.jpeg"}, 
-                                    {"name": "Laptop", "price": 15000.00, "type": "gadget", "qty": 400, "imgpath": "../styles/images/laptop.png"}, 
-                                    {"name": "Monitor", "price": 600.0, "type": "gadget", "qty": 8, "imgpath": "../styles/images/monitor.jpeg"}, 
-                                    {"name": "IC", "price": 10.42, "type": "component", "qty": 420, "imgpath": "../styles/images/ic.jpg"}, 
-                                    {"name": "Resistor", "price": 4.00, "type": "component", "qty": 1200, "imgpath": "../styles/images/res.png"}, 
-                                    {"name": "Capacitor", "price": 6.9, "type": "component", "qty": 6900, "imgpath": "../styles/images/cap.png"}, ];
+            <div style="margin-top: 60px; padding-bottom: 60px; background-color: #4444447c; display: grid; justify-content: center; margin-top: 30px;">
+                <h2>Bulk Order Form</h2>
+                <form method="POST" style="display: grid;margin-left: -100px; margin-right: -100px;">
+                    <label for="name";">Name:</label>
+                    <input type="text", name="name" id="name" required>
+                    <br>
+                
+                    <label for="item">Item:</label>
+                    <input type="text" name="item" id="item" required>
+                    <br>
 
-                listSection = document.querySelector("#product-list");
-                function updateList()
-                {
-                    listSection.innerHTML = ""; 
+                    <label for="quantity">Quantity:</label>
+                    <input type="number" name="quantity" id="quantity" required>
+                    <br>
 
-                    let dropdown = document.querySelector("#category-selection");
-                    let category = dropdown.value;
+                    <label for="address">Address:</label>
+                    <textarea name="address" id="address" required></textarea>
+                    <br>
 
-                    for (let i = 0; i<productList.length; i++)
-                    {
-                        item = productList[i];
-                        if (item.type == category || category == "all") 
-                        {
-                            let product_div = document.createElement("div");
-                            product_div.classList("product_div")
-
-                            let img_p = document.createElement("img");
-                            img_p.setAttribute("src", item.imgpath);
-                            img_p.classList.add("product_img")
-                            product_div.appendChild(img_p);
-
-                            let name_p = document.createElement("h4");
-                            name_p.innerHTML = item.name;
-                            name_p.classList.add("product_name")
-                            product_div.appendChild(name_p);
-
-                            let price_p = document.createElement("p");
-                            price_p.innerHTML = "Price: ₹"+item.price;
-                            price_p.classList.add("product_price")
-                            product_div.appendChild(price_p);
-
-                            let qp = document.createElement("p");
-                            qp.innerHTML = "Quantity available: " + item.qty;
-                            product_div.appendChild(qp);
-                            price_p.classList.add("product_qty");
-
-                            let qty_slider = document.createElement("div")
-                            let minus = document.createElement("button")
-                            // minus.id = "minus" + index
-                            minus.innerHTML = "-"
-                            let plus = document.createElement("button")
-                            // plus.id = "plus" + index
-                            plus.innerHTML = "+"
-                            let qty_display = document.createElement("p");
-                            // qty_display.id = "qty" + index
-                            qty_display.innerHTML = "0"
-
-                            qty_slider.appendChild(minus)
-                            qty_slider.appendChild(qty_display)
-                            qty_slider.appendChild(plus)
-
-                            
-
-                            listSection.appendChild(product_div);
-                            listSection.appendChild(qty_slider);
-
-                            alert("g" +i + "" + productList.length)
-
-                        }
-                    }
-                } 
-
-            </script>
-        </main>
-
-        <div class="container">
-            <h2>Bulk Order Form</h2>
-            <form method="POST">
-                <label for="name">Name:</label>
-                <input type="text", name="name" id="name" required>
-                <br>
-            
-                <label for="item">Item:</label>
-                <input type="text" name="item" id="item" required>
-                <br>
-
-                <label for="quantity">Quantity:</label>
-                <input type="number" name="quantity" id="quantity" required>
-                <br>
-
-                <label for="address">Address:</label>
-                <textarea name="address" id="address" required></textarea>
-                <br>
-
-                <button type="submit">Submit</button>
-            </form>
-          </div>
-        
+                    <button type="submit" style="height: 30px;">Submit</button>
+                </form>
+            </div>
+        </div>
 
 
         <div id="foot"></div>

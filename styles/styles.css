@@ -1,10 +1,13 @@
+.container {
+    margin: 60px;
+}
 
 .header {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    background-color: #68b31d6c;
+    background-color: #444;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 5px;
@@ -18,6 +21,11 @@
     color: white;
     font-weight: bolder;
 }
+
+nav {
+    margin-right: 20px;
+}
+
 nav a {
     margin-right: 20px;
     color: white;
@@ -25,23 +33,22 @@ nav a {
 }
 
 .footer {
-    top: 0;
-    left: 0;
     width: 100%;
-    background-color: #80ff00;
+    background-color: #61a331;
     padding-left: 15px;
     padding-right: 15px;
     padding-top: 5px;
     padding-bottom: 10px;
     margin-top: 84px;
+    margin-left: 0px;
     justify-content: space-between;
     display: flex;
     align-items: center;
 }
 
 body { 
-    padding: 0;
-    margin: 0;
+    padding: 0!important;
+    margin: 0!important;
     overflow-x: hidden;
 }
 
@@ -51,8 +58,9 @@ body {
     font-family: "Arial", sans-serif; 
     padding: 40px;
     padding-top: 110px;
-    padding-bottom: 200px;
-    
+    padding-bottom: 110px;
+    background-position: center;
+    background-size: 100%;
 }
 
 h1 {
@@ -61,31 +69,44 @@ h1 {
 
 #mainbanner {
     background-image: url("images/electronics.png") !important;
-    background-position: center;
-    background-size: 100%;
 }
-
 #aboutbanner {
     background-image: url("images/commandline.jpg") !important;
-    background-position: center;
-    background-size: 100%;
 }
-
 #contactbanner {
     background-image: url("images/rotary.jpeg") !important;
-    background-position: center;
-    background-size: 100%;
 }
-
 #mapbanner {
     background-image: url("images/circuitmap.jpg") !important;
-    background-position: center;
-    background-size: 100%;
 }
-
 #shopbanner {
     background-image: url("images/eshop.png") !important;
-    background-position: center;
-    background-size: 100%;
 }
 
+.product_img {
+    width: 240px;
+    height: 240px;   
+}
+
+.product_div {
+    border: 4px solid black;
+    padding: 20px;
+    width: fit-content;
+    margin-top: 20px;
+}
+
+.product_name {
+    margin-left: 40px;
+}
+
+.product_qty {
+    margin-left: 20px;
+}
+
+.product_div p {
+    margin-left: 40px;
+}
+
+.product_div button {
+    margin-left: 40px;
+}
